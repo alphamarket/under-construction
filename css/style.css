@@ -74,14 +74,40 @@ body{
 .countdown-amount {
     font-size: 60px;
 	font-weight:700;
+	color: #555;
 	line-height:130px;
 }
 .countdown-period {
     display: block;
 	line-height:60px;
-	color:#777;
+	color: #777;
 	font-size:18px;
 	font-weight:100;
+}
+
+.countdown-section:nth-child(1) .countdown-period {
+	color: #0173bc
+}
+.countdown-section:nth-child(2) .countdown-period {
+	color: #3ab54a
+}
+.countdown-section:nth-child(3) .countdown-period {
+	color: #f00000
+}
+.countdown-section:nth-child(4) .countdown-period {
+	color: #fbbc05
+}
+.countdown-section:nth-child(1) {
+	border-color: #0173bc
+}
+.countdown-section:nth-child(2) {
+	border-color: #3ab54a;
+}
+.countdown-section:nth-child(3) {
+	border-color: #f00000;
+}
+.countdown-section:nth-child(4) {
+	border-color: #fbbc05;
 }
 
 .image-align{
@@ -204,7 +230,9 @@ margin-top:30px;
 }
 
 @media (max-width: 420px){
-
+	.countdown-period {
+		font-size: 90%
+	}
 	.countdown-section {
 		display: block;
 		float: left;
