@@ -26,6 +26,10 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
+<meta name="author" content="<?= get_trans('site_author') ?>">
+<meta name="keywords" content="<?= get_trans('site_keywords') ?>">
+<meta name="description" content="<?= get_trans('site_description') ?>">
+
 <link rel="alternate" href="//virahub.net" hreflang="en-US" />
 <link rel="alternate" href="//virahub.net/en" hreflang="en-US" />
 <link rel="alternate" href="//virahub.net/fa" hreflang="fa-IR" />
