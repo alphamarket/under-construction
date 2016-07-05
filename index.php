@@ -1,7 +1,7 @@
 ﻿<?php
     $uri_param = '_uri';
     $params = [
-        'lang' => 'en',
+        'lang' => 'fa',
         'supported_langs' => [
             'en' => ['English', 'ltr'],
             'fa' => ['Farsi', 'rtl']
