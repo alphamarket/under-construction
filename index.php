@@ -3,9 +3,10 @@
     $params = [
         'lang' => 'fa',
         'supported_langs' => [
-            'en' => ['English', 'ltr'],
-            'fa' => ['Farsi', 'rtl']
+            'en' => ['English', 'ltr', 'en-US'],
+            'fa' => ['Farsi', 'rtl', 'fa-IR']
         ],
+        'locale' => 'fa-IR',
         'dir' => 'auto'
     ];
     if(isset($_GET[$uri_param])) {
@@ -26,16 +27,28 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
-<meta name="author" content="<?= get_trans('site_author') ?>">
-<meta name="keywords" content="<?= get_trans('site_keywords') ?>">
-<meta name="description" content="<?= get_trans('site_description') ?>">
-
-<link rel="alternate" href="//virahub.net" hreflang="en-US" />
-<link rel="alternate" href="//virahub.net/en" hreflang="en-US" />
-<link rel="alternate" href="//virahub.net/fa" hreflang="fa-IR" />
-
-
 <title><?= get_trans('title') ?></title>
+
+<meta name="author" content="<?= get_trans('site_author') ?>" />
+<meta name="keywords" content="<?= get_trans('site_keywords') ?>" />
+<meta name="description" content="<?= get_trans('site_description') ?>" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="<?= get_trans('title') ?>" />
+<meta property="og:url" content="<?= "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}" ?>" />
+<meta property="og:image" content="/images/logo.png" />
+<meta property="og:description" content="<?= get_trans('site_description') ?>" />
+<meta property="og:locale" content="<?= $params['locale'] ?>" />
+<?php foreach ($params['supported_langs'] as $lang => $value): if($lang == $params['lang']) continue; ?>
+<meta property="og:locale:alternate" content="<?= $value[2] ?>" />
+<?php endforeach; ?>
+<meta property="og:site_name" content="Virahub" />
+
+<link rel="alternate" href="//virahub.net" hreflang="fa-IR" />
+<?php foreach ($params['supported_langs'] as $lang => $value): ?>
+<link rel="alternate" href="//virahub.net/<?= $lang ?>" hreflang="<?= $value[2] ?>" />
+<?php endforeach; ?>
+
 <link rel="shortcut icon" href="/favicon.ico" type="image/ico">
 
 <!--CSS-->
