@@ -8,8 +8,8 @@
         ],
         'dir' => 'auto'
     ];
-    if(isset($_REQUEST[$uri_param])) {
-        $vars = array_values(array_filter(explode('/', $_REQUEST[$uri_param])));
+    if(isset($_GET[$uri_param])) {
+        $vars = array_values(array_filter(explode('/', $_GET[$uri_param])));
         if(count($vars) && array_key_exists(strtolower($vars[0]), $params['supported_langs'])) {
             $lang = strtolower(array_shift($vars));
             $params['dir'] = $params['supported_langs'][$lang][1];
