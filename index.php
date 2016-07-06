@@ -5,10 +5,10 @@
         'lang' => 'fa',
         'supported_langs' => [
             'en' => ['English', 'ltr', 'en-US'],
-            'fa' => ['Farsi', 'rtl', 'fa-IR']
+            'fa' => ['فارسی', 'rtl', 'fa-IR']
         ],
         'locale' => 'fa-IR',
-        'dir' => 'auto'
+        'dir' => 'rtl'
     ];
     if(isset($_GET[$uri_param])) {
         $vars = array_values(array_filter(explode('/', $_GET[$uri_param])));
@@ -71,12 +71,18 @@
     <!--CONTAINER-->
     <div class="container-fluid">
         <div style='text-align: right'>
-            <ul class="breadcrumb lang" style=''>
+            <ul class="breadcrumb lang">
+                <?php if($params['dir'] != 'rtl'): ?>
+                <li><a href='/about'><?= get_trans('company_about') ?></a></li>
+                <?php endif; ?>
                 <?php foreach ($params['supported_langs'] as $lang => $value) {
                     echo '<li'.($params['lang'] == $lang ? ' class="active"' : '').'>';
                     echo "<a href='/$lang'>${value[0]}</a>";
                     echo "</li>";
                 }?>
+                <?php if($params['dir'] == 'rtl'): ?>
+                <li><a href='/about'><?= get_trans('company_about') ?></a></li>
+                <?php endif; ?>
             </ul>
         </div>
         <div class="clear-fix" style='margin-top:7%;'></div>
