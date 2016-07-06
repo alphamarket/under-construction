@@ -53,7 +53,6 @@
 
 <!--CSS-->
 <link href="/css/style.css" rel="stylesheet">
-<link href="/css/bootstrap-light.css" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Maitree' rel='stylesheet'>
 <link href='//fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet'>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet" crossorigin="anonymous">
@@ -93,7 +92,7 @@
         </p>
         <p><strong><?= get_trans('contact_us') ?></strong></p>
 
-        <display-header class="section-header" style="font-size: 40px; margin: 100px 50px 0 50px">
+        <display-header class="section-header" style="font-size: 40px; margin: 3% 3% 0 3%">
             <span><?= get_trans('count_down_text') ?></span>
         </display-header>
         <div id="defaultCountdown"></div>
