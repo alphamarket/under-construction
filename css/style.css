@@ -10,10 +10,7 @@
 */
 /*------------------------------------------------*/
 
-body{
-	font-family:'Maitree', Arial;
-	color:#000;
-}
+body{ color:#000; }
 
 #defaultCountdown{
 	z-index:2;
@@ -95,7 +92,7 @@ display-header{
 	display: block;
 }
 
-display-header small{ font-size:32px; 1}
+display-header small{ font-size:32px; }
 
 p {
 	font-size:16px;

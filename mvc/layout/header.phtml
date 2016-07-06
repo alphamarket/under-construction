@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="<?= $params['lang'] ?>" dir='<?= $params['dir'] ?>'>
+<head>
+<meta charset="utf-8">
+
+<title><?= get_trans('title') ?></title>
+
+<meta name="author" content="<?= get_trans('site_author') ?>" />
+<meta name="keywords" content="<?= get_trans('site_keywords') ?>" />
+<meta name="description" content="<?= get_trans('site_description') ?>" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="<?= get_trans('title') ?>" />
+<meta property="og:url" content="<?= "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}" ?>" />
+<meta property="og:image" content="/images/logo.png" />
+<meta property="og:description" content="<?= get_trans('site_description') ?>" />
+<meta property="og:locale" content="<?= $params['locale'] ?>" />
+<?php foreach ($params['supported_langs'] as $lang => $value): if($lang == $params['lang']) continue; ?>
+<meta property="og:locale:alternate" content="<?= $value[2] ?>" />
+<?php endforeach; ?>
+<meta property="og:site_name" content="Virahub" />
+
+<link rel="alternate" href="//virahub.net" hreflang="fa-IR" />
+<?php foreach ($params['supported_langs'] as $lang => $value): ?>
+<link rel="alternate" href="//virahub.net/<?= $lang ?>" hreflang="<?= $value[2] ?>" />
+<?php endforeach; ?>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/ico">
+
+<!--CSS-->
+<link href="/css/style.css" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Maitree' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet" crossorigin="anonymous">
+<!--/CSS-->
+
+<style type="text/css">
+    .breadcrumb.lang {background-color: transparent; position: absolute; top: 0; right: 0;}
+    .breadcrumb.lang li a:hover{text-decoration: none}
+    .breadcrumb.lang li.active a {border-bottom: 1px solid #e7e7e7; padding-bottom: 5px; color: #444;}
+    .section-header {line-height: 20px; text-align: center; border-top: 1px solid #aeaeae; padding-top: 10px; margin: 20px 40px 5px 40px; font-size: 34px!important; font-size: 3.4rem;}
+    .section-header span {position: relative; padding: 0 30px; top: <?= $params['lang'] == 'fa' ? "-26px" : "-15px" ?>; background: #ffffff; letter-spacing: -0.01em; line-height: 3.4rem;}
+</style>
+</head>
+
+<body>
+<!--CONTAINER-->
+<div class="container-fluid">
+    <div style='text-align: right'>
+        <ul class="breadcrumb lang">
+            <?php if($params['dir'] != 'rtl'): ?>
+            <li><a href='/<?= $params['lang'] ?>/about'><?= get_trans('company_about') ?></a></li>
+            <?php endif; ?>
+            <?php foreach ($params['supported_langs'] as $lang => $value) {
+                echo '<li'.($params['lang'] == $lang ? ' class="active"' : '').'>';
+                echo "<a href='/$lang/".$params['view']['name']."'>${value[0]}</a>";
+                echo "</li>";
+            }?>
+            <?php if($params['dir'] == 'rtl'): ?>
+            <li><a href="/<?= $params['lang'] ?>/about"><?= get_trans('company_about') ?></a></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+    <div class="clear-fix" style='margin-top:7%;'></div>

@@ -1,0 +1,16 @@
+<img src="/images/logo.png" alt="Vira Logo" class="image-align" height="160" style='<?= $params['lang'] == 'en' ? 'margin-bottom: 20px;' : '' ?>'/>
+<display-header style='line-height: 40px'>
+    <brand style='font-variant: small-caps;'><?= get_trans('company_name') ?></brand><br />
+    <small style='margin-bottom:-100px;font-family: "Dancing Script"'>
+        <?= get_trans('company_slogans') ?>
+    </small>
+</display-header>
+<p style='padding:30px 0 20px 0; font-family: "Crimson Text"; font-size: 20px'>
+    <?= get_trans('under_construction_text') ?>
+</p>
+<p><strong><?= get_trans('contact_us') ?></strong></p>
+
+<display-header class="section-header" style="font-size: 40px; margin: 3% 3% 0 3%">
+    <span><?= get_trans('count_down_text') ?></span>
+</display-header>
+<div id="defaultCountdown"></div>
