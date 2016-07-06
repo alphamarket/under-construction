@@ -51,6 +51,7 @@
     <div style='text-align: right'>
         <ul class="breadcrumb lang">
             <?php if($params['dir'] != 'rtl'): ?>
+            <li><a href='/<?= $params['lang'] ?>'><?= get_trans('home') ?></a></li>
             <li><a href='/<?= $params['lang'] ?>/about'><?= get_trans('company_about') ?></a></li>
             <?php endif; ?>
             <?php foreach ($params['supported_langs'] as $lang => $value) {
@@ -60,6 +61,7 @@
             }?>
             <?php if($params['dir'] == 'rtl'): ?>
             <li><a href="/<?= $params['lang'] ?>/about"><?= get_trans('company_about') ?></a></li>
+            <li><a href='/<?= $params['lang'] ?>'><?= get_trans('home') ?></a></li>
             <?php endif; ?>
         </ul>
     </div>
