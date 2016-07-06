@@ -80,14 +80,14 @@
             </ul>
         </div>
         <div class="clear-fix" style='margin-top:7%;'></div>
-        <img src="/images/logo.png" alt="Vira Logo" class="image-align" height="160"/>
+        <img src="/images/logo.png" alt="Vira Logo" class="image-align" height="160" style='<?= $params['lang'] == 'en' ? 'margin-bottom: 20px;' : '' ?>'/>
         <display-header style='line-height: 40px'>
             <brand style='font-variant: small-caps;'><?= get_trans('company_name') ?></brand><br />
             <small style='margin-bottom:-100px;font-family: "Dancing Script"'>
                 <?= get_trans('company_slogans') ?>
             </small>
         </display-header>
-        <p style='padding:20px 0 20px 0'>
+        <p style='padding:30px 0 20px 0'>
             <?= get_trans('under_construction_text') ?>
         </p>
         <p><strong><?= get_trans('contact_us') ?></strong></p>
