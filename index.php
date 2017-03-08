@@ -1,5 +1,5 @@
 ﻿<?php
-    $target_launch_date = [2017, 2, 3];
+    $target_launch_date = [2017, 6, 26];
     $uri_param = '_uri';
     $params = [
         'lang' => 'fa',
